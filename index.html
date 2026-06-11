@@ -1,66 +1,28 @@
-<!DOCTYPE html>                                                                                                                                                   
-    <html lang="en">                                                                                                                                                  
-    <head>                                                                                                                                                            
-      <meta charset="UTF-8">                                                                                                                                          
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                          
-                                                                                                                                                                      
-      <!-- IMPORTANT: SEO & Site Name Data -->                                                                                                                        
-      <title>Sharthak Sev</title>                                                                                                                                     
-      <meta property="og:site_name" content="Sevrony">                                                                                                                
-      <script type="application/ld+json">                                                                                                                             
-      {                                                                                                                                                               
-        "@context": "https://schema.org",                                                                                                                             
-        "@type": "WebSite",                                                                                                                                           
-        "name": "Sevrony",                                                                                                                                            
-        "url": "https://sharthak-sev.github.io/"                                                                                                                      
-      }                                                                                                                                                               
-      </script>                                                                                                                                                       
-                                                                                                                                                                      
-      <!-- Tailwind CSS & Fonts -->                                                                                                                                   
-      <script src="https://cdn.tailwindcss.com"></script>                                                                                                             
-      <link rel="preconnect" href="https://fonts.googleapis.com">                                                                                                     
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>                                                                                            
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">                                                     
-                                                                                                                                                                      
-      <script>                                                                                                                                                        
-        tailwind.config = {                                                                                                                                           
-          theme: {                                                                                                                                                    
-            extend: {                                                                                                                                                 
-              fontFamily: { sans: ['Inter', 'sans-serif'] }                                                                                                           
-            }                                                                                                                                                         
-          }                                                                                                                                                           
-        }                                                                                                                                                             
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Sevrony - Free Adaptive SAT Practice Tests</title>
+      
+      <!-- 1. Tell Google the REAL app is the subfolder -->
+      <link rel="canonical" href="https://sharthak-sev.github.io/Sevrony/">
+      
+      <!-- 2. The 0-second Meta Refresh (Google reads this as a strict 301 Redirect) -->
+      <meta http-equiv="refresh" content="0; url=https://sharthak-sev.github.io/Sevrony/">
+      
+      <!-- 3. Site Name Metadata (The only reason this file exists) -->
+      <meta property="og:site_name" content="Sevrony">
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sevrony",
+        "url": "https://sharthak-sev.github.io/"
+      }
       </script>
     </head>
-    <body class="min-h-screen flex items-center justify-center bg-gray-50 text-gray-900 antialiased selection:bg-gray-200">
-      
-      <!-- shadcn-style Card -->
-      <div class="flex flex-col items-center justify-center space-y-6 p-8 max-w-xs w-full bg-white rounded-xl border border-gray-200 shadow-sm transition-all duration-
-  300">
-        
-        <!-- Clean SVG Spinner -->
-        <div class="relative flex items-center justify-center w-12 h-12">
-          <svg class="animate-spin text-gray-900 w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.
-  647z"></path>
-          </svg>
-        </div>
-  
-        <!-- Typography -->
-        <div class="space-y-2 text-center">
-          <h1 class="text-xl font-semibold tracking-tight text-gray-900">Redirecting</h1>
-          <p class="text-sm text-gray-500 font-medium">Taking you to Sevrony...</p>
-        </div>
-  
-      </div>
-  
-      <!-- Redirect Logic -->
-      <script>
-        // 600ms delay for a smooth UI experience before the jump
-        setTimeout(() => {
-          window.location.href = "/Sevrony/";
-        }, 600);
-      </script>
+    <body>
+      <!-- Fallback link for bots that disable meta-refresh -->
+      <p>If you are not redirected automatically, <a href="https://sharthak-sev.github.io/Sevrony/">click here to go to Sevrony</a>.</p>
     </body>
     </html>
