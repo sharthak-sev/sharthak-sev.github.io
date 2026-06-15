@@ -1,29 +1,126 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Sevrony - Free Adaptive SAT Practice Tests</title>
-      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sevrony - Free Adaptive SAT Practice Tests</title>
+  <meta name="description" content="Take completely free, timed, adaptive SAT practice tests with imported SAT question bank data. Store practice history locally and review your performance at zero cost.">
+  <meta name="keywords" content="SAT practice, SAT question bank, adaptive SAT test, digital SAT prep, free SAT practice, Sevrony">
+  <meta name="author" content="Sharthak Sev">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <meta property="og:site_name" content="Sevrony">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sharthak-sev.github.io/">
+  <meta property="og:title" content="Sevrony - Free Adaptive SAT Practice Tests">
+  <meta property="og:description" content="Take completely free, timed, adaptive SAT practice tests with imported SAT question bank data. Store practice history locally and review your performance at zero cost.">
+  <meta property="og:image" content="https://sharthak-sev.github.io/Sevrony/logo.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://sharthak-sev.github.io/">
+  <meta property="twitter:title" content="Sevrony - Free Adaptive SAT Practice Tests">
+  <meta property="twitter:description" content="Take completely free, timed, adaptive SAT practice tests with imported SAT question bank data. Store practice history locally and review your performance at zero cost.">
+  <meta property="twitter:image" content="https://sharthak-sev.github.io/Sevrony/logo.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sevrony",
+    "url": "https://sharthak-sev.github.io/"
+  }
+  </script>
+
+  <!-- Auto-redirect for returning users -->
+  <script>
+    if (localStorage.getItem('sevrony.syncMeta')) {
+      window.location.replace('/Sevrony/');
+    } else {
+      const request = indexedDB.open('SatPracticeDB');
+      request.onsuccess = function(event) {
+        const db = event.target.result;
+        try {
+          const transaction = db.transaction(['questionBanks'], 'readonly');
+          const store = transaction.objectStore('questionBanks');
+          const countRequest = store.count();
+          countRequest.onsuccess = function() {
+            if (countRequest.result > 0) {
+              window.location.replace('/Sevrony/');
+            }
+          };
+        } catch(e) {}
+      };
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/Sevrony/styles.css">
+  <link rel="stylesheet" href="/Sevrony/tailwind.css">
+</head>
+<body class="bg-background text-foreground">
+  <div class="font-marketing min-h-[80vh] flex flex-col justify-center items-center py-16 px-4 sm:px-6 lg:px-8">
+    
+    <!-- Hero Section -->
+    <div class="text-center max-w-4xl mx-auto space-y-8 animate-fade-in-up">
+      <div class="inline-flex items-center justify-center p-4 border border-border/60 bg-muted/20 rounded-2xl mb-6 shadow-sm">
+        <img src="/Sevrony/logo.svg" alt="Sevrony Logo" class="w-14 h-14 object-contain" />
+      </div>
       
-      <!-- 1. Tell Google the REAL app is the subfolder -->
-      <link rel="canonical" href="https://sharthak-sev.github.io/Sevrony/">
+      <h1 class="text-5xl md:text-6xl font-bold tracking-tighter text-foreground leading-tight" style="margin: 0; padding: 0;">
+        Master the SAT, <span class="text-muted-foreground">Locally.</span>
+      </h1>
       
-      <!-- 2. The 0-second Meta Refresh (Google reads this as a strict 301 Redirect) -->
-      <meta http-equiv="refresh" content="0; url=https://sharthak-sev.github.io/Sevrony/">
+      <p class="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-6 font-medium" style="margin-bottom: 2.5rem;">
+        The authentic Bluebook practice experience. Zero accounts, zero costs. Focus purely on your score.
+      </p>
       
-      <!-- 3. Site Name Metadata (The only reason this file exists) -->
-      <meta property="og:site_name" content="Sevrony">
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Sevrony",
-        "url": "https://sharthak-sev.github.io/"
-      }
-      </script>
-    </head>
-    <body>
-      <!-- Fallback link for bots that disable meta-refresh -->
-      <p>If you are not redirected automatically, <a href="https://sharthak-sev.github.io/Sevrony/">click here to go to Sevrony</a>.</p>
-    </body>
-    </html>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+        <a href="/Sevrony/" class="inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 shadow-sm" style="text-decoration: none;">
+          Get Started Free
+        </a>
+        <a href="https://github.com/sharthak-sev/sat-qb-exporter" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors border border-input bg-background hover:bg-accent hover:text-accent-foreground h-12 px-8 shadow-sm" style="text-decoration: none;">
+          View Exporter Extension
+        </a>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
+      
+      <!-- Feature 1 -->
+      <div class="p-8 rounded-2xl bg-muted/40 text-card-foreground border border-border/50">
+        <div class="h-10 w-10 flex items-center justify-center mb-6 text-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="text-lg font-bold tracking-tight mb-2 text-foreground" style="margin: 0 0 8px 0;">100% Free</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed" style="margin: 0;">No subscriptions. Practice anywhere without distractions.</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="p-8 rounded-2xl bg-muted/40 text-card-foreground border border-border/50">
+        <div class="h-10 w-10 flex items-center justify-center mb-6 text-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h.01"/><path d="M17 7h.01"/><path d="M7 17h.01"/><path d="M17 17h.01"/></svg>
+        </div>
+        <h3 class="text-lg font-bold tracking-tight mb-2 text-foreground" style="margin: 0 0 8px 0;">Real Question Bank</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed" style="margin: 0;">Import official College Board questions and take adaptive tests that accurately simulate exam day.</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="p-8 rounded-2xl bg-muted/40 text-card-foreground border border-border/50">
+        <div class="h-10 w-10 flex items-center justify-center mb-6 text-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold tracking-tight mb-2 text-foreground" style="margin: 0 0 8px 0;">Deep Review</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed" style="margin: 0;">Review every past test, read detailed rationales, and track your performance to improve your score.</p>
+      </div>
+
+    </div>
+    
+  </div>
+</body>
+</html>
