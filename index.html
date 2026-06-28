@@ -28,6 +28,11 @@
 <meta property="twitter:image" content="https://sharthak-sev.github.io/Sevrony/logo.svg">
 
 <script>
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   if (localStorage.getItem('sevrony.syncMeta')) {
     window.location.replace('/Sevrony/');
   } else {
