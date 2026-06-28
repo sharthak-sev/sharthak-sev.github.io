@@ -420,24 +420,9 @@ void main() {
 <!-- STITCH_SHADER_END:ANIMATION_3 -->
 <!-- Grain Overlay -->
 <div class="grain-overlay"></div>
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-outline-variant transition-colors duration-300 animate-fade-in-down">
-<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto w-full">
-<div class="font-display text-headline-md uppercase tracking-tighter text-primary font-bold">
-                SEVRONY
-            </div>
-<div class="hidden md:flex gap-gutter items-center">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md uppercase tracking-widest hover:text-outline transition-colors" href="#">Home</a>
-<a class="text-secondary hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-widest" href="#how-it-works">How it Works</a>
-<a class="text-secondary hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-widest" href="https://github.com/sharthak-sev/sat-qb-exporter" target="_blank" rel="noopener noreferrer">Extension</a>
-</div>
-<a href="/Sevrony/" class="bg-primary text-on-primary px-6 py-2 border-2 border-primary font-label-md text-label-md retro-button-shadow shimmer-effect glitch-hover uppercase font-bold tracking-widest no-underline inline-block text-center">
-                Get Started
-            </a>
-</div>
-</nav>
+
 <!-- Hero Section -->
-<header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+<header class="relative min-h-screen flex items-center justify-center overflow-hidden">
 <!-- Parallax Background Text -->
 <div class="absolute inset-0 z-0 flex flex-col justify-center items-center pointer-events-none select-none overflow-hidden opacity-20 transition-transform duration-75 ease-out" id="parallax-bg">
 <div class="font-display text-[200px] md:text-[300px] font-extrabold leading-none text-transparent border-outline-variant uppercase tracking-tighter scale-y-110" style="-webkit-text-stroke: 1px #444748;">ZERO ACCOUNTS</div>
@@ -658,23 +643,23 @@ animate();
 </div>
 </div>
 </section>
+
 <!-- Footer -->
 <footer class="bg-surface-container-lowest border-t-2 border-primary w-full">
 <div class="flex flex-col md:flex-row justify-between items-center py-12 px-margin-desktop max-w-container-max mx-auto gap-gutter">
 <div class="flex flex-col gap-4 items-center md:items-start">
 <div class="font-display text-headline-lg text-primary uppercase font-bold scale-y-110 origin-left">SEVRONY</div>
 <p class="font-label-sm text-label-sm text-secondary text-center md:text-left uppercase font-bold tracking-widest">
-                    © 2024 SEVRONY. ALL RIGHTS RESERVED. CLINICAL PRECISION IN TESTING.
+                    © 2026 SEVRONY. ALL RIGHTS RESERVED. CLINICAL PRECISION IN TESTING.
                 </p>
 </div>
 <div class="flex gap-gutter items-center">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase font-bold tracking-widest" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase font-bold tracking-widest" href="/Sevrony/#privacy">Privacy</a>
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase font-bold tracking-widest" href="#">Terms</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase font-bold tracking-widest" href="#">Status</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors uppercase font-bold tracking-widest" href="#">Discord</a>
 </div>
 </div>
 </footer>
+
 <script>
         // Intersection Observer for Scroll Reveals
         const observerOptions = {
@@ -696,17 +681,7 @@ animate();
             observer.observe(el);
         });
 
-        // Sticky nav styling on scroll
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('border-primary/50', 'shadow-[0_4px_30px_rgba(0,0,0,0.1)]');
-                nav.classList.remove('border-outline-variant');
-            } else {
-                nav.classList.remove('border-primary/50', 'shadow-[0_4px_30px_rgba(0,0,0,0.1)]');
-                nav.classList.add('border-outline-variant');
-            }
-        });
+
 
         // Parallax Effect for Background Text
         const parallaxBg = document.getElementById('parallax-bg');
