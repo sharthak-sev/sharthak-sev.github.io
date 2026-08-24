@@ -36,20 +36,24 @@
   if (localStorage.getItem('sevrony.syncMeta')) {
     window.location.replace('/Sevrony/');
   } else {
-    const request = indexedDB.open('SatPracticeDB');
-    request.onsuccess = function(event) {
-      const db = event.target.result;
-      try {
-        const transaction = db.transaction(['questionBanks'], 'readonly');
-        const store = transaction.objectStore('questionBanks');
-        const countRequest = store.count();
-        countRequest.onsuccess = function() {
-          if (countRequest.result > 0) {
-            window.location.replace('/Sevrony/');
+    try {
+      const request = indexedDB.open('sat-interactive-practice');
+      request.onsuccess = function(event) {
+        const db = event.target.result;
+        try {
+          if (db.objectStoreNames.contains('questionBanks')) {
+            const transaction = db.transaction(['questionBanks'], 'readonly');
+            const store = transaction.objectStore('questionBanks');
+            const countRequest = store.count();
+            countRequest.onsuccess = function() {
+              if (countRequest.result > 0) {
+                window.location.replace('/Sevrony/');
+              }
+            };
           }
-        };
-      } catch(e) {}
-    };
+        } catch(e) {}
+      };
+    } catch(e) {}
   }
 </script>
 
